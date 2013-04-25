@@ -4,13 +4,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ijoyz.latte.model.User;
-import com.ijoyz.latte.model.Users;
+import com.ijoyz.moka.model.User;
+import com.ijoyz.moka.model.Users;
 
 @Controller
 @RequestMapping("/")
@@ -26,11 +26,24 @@ public class IndexController {
 	@RequestMapping(value = "/login")
 	public String login(@RequestParam("userName") String userName, @RequestParam("pass") String password,
 			HttpSession session) {
-		User user = users.getUser(userName, password);
-		SecurityUtils.getSubject().login(new UsernamePasswordToken(userName, password));
+		final User user = users.getUser(userName, password);
 		if (user != null) {
-			String validateCode = users.validate(user);
-			session.setAttribute("validateCode", validateCode);
+			SecurityUtils.getSubject().login(new AuthenticationToken() {
+				/**
+				 * 
+				 */
+				private static final long serialVersionUID = 5578659136414434152L;
+				@Override
+				public Object getPrincipal() {
+					return user;
+				}
+				
+				@Override
+				public Object getCredentials() {
+					return user.getUserName();
+				}
+			});
+			
 			return "user_admin";
 		}
 		return "index";

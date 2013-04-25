@@ -8,6 +8,23 @@ drop table if exists TB_LEAGUE_DATA;
 
 drop table if exists TB_Sequence;
 
+drop table if exists TB_USER;
+
+/*==============================================================*/
+/* Table: TB_USER                                               */
+/*==============================================================*/
+create table TB_USER
+(
+   ID                   bigint not null,
+   USER_NAME            varchar(60) not null,
+   PASS                 varchar(128) not null,
+   GAME_USER_ID         bigint,
+   ROLE                 int not null,
+   primary key (ID)
+);
+
+alter table TB_USER comment 'ç”¨æˆ·è¡¨';
+
 /*==============================================================*/
 /* Table: TB_GANG                                               */
 /*==============================================================*/
@@ -19,7 +36,7 @@ create table TB_GANG
    primary key (ID)
 );
 
-alter table TB_GANG comment '°ï»á±í';
+alter table TB_GANG comment 'ï¿½ï¿½ï¿½ï¿½';
 
 /*==============================================================*/
 /* Table: TB_GANG_MEMBER                                        */
@@ -37,7 +54,7 @@ create table TB_GANG_MEMBER
    primary key (ID)
 );
 
-alter table TB_GANG_MEMBER comment '°ï»á³ÉÔ±±í';
+alter table TB_GANG_MEMBER comment 'ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½';
 
 /*==============================================================*/
 /* Table: TB_LEAGUE                                             */
@@ -53,7 +70,7 @@ create table TB_LEAGUE
    primary key (ID)
 );
 
-alter table TB_LEAGUE comment 'ÁªÈü±í';
+alter table TB_LEAGUE comment 'ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 /*==============================================================*/
 /* Table: TB_LEAGUE_DATA                                        */
@@ -83,7 +100,7 @@ create table TB_LEAGUE_DATA
    primary key (ID)
 );
 
-alter table TB_LEAGUE_DATA comment 'ÁªÈüÊý¾Ý';
+alter table TB_LEAGUE_DATA comment 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 /*==============================================================*/
 /* Table: TB_Sequence                                           */

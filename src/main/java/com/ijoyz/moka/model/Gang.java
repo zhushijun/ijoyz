@@ -16,6 +16,16 @@ public class Gang {
 	private final String name;
 
 	private final long id;
+	
+	private long gangId;
+
+	public long getGangId() {
+		return gangId;
+	}
+
+	public void setGangId(long gangId) {
+		this.gangId = gangId;
+	}
 
 	final List<League> leagues = new ArrayList<League>();
 
