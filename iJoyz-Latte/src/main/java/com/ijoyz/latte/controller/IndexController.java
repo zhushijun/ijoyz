@@ -3,10 +3,9 @@ package com.ijoyz.latte.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ijoyz.latte.model.User;
@@ -23,11 +22,10 @@ public class IndexController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@RequestParam("userName") String userName, @RequestParam("pass") String password,
 			HttpSession session) {
 		User user = users.getUser(userName, password);
-		SecurityUtils.getSubject().login(new UsernamePasswordToken(userName, password));
 		if (user != null) {
 			String validateCode = users.validate(user);
 			session.setAttribute("validateCode", validateCode);

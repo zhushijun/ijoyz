@@ -29,7 +29,7 @@ public class UserController {
 	 * @param request
 	 * @param response
 	 */
-	@RequestMapping(value = "/accounts")
+	@RequestMapping(value = "/accounts", method = RequestMethod.POST)
 	public void listAccounts(HttpServletRequest request, HttpServletResponse response) {
 		User user = users.loadCurrentUser();
 		List<Account> accounts = user.listAccounts();
