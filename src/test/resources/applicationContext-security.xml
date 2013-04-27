@@ -33,7 +33,6 @@
 				/welcome.do* = anon
 				/login.do* = anon
 				/u/** = authc,perms["remote:invoke"]
-				
 			</value>
 		</property>
 	</bean>

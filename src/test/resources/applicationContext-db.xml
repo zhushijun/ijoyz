@@ -50,12 +50,12 @@
 
 		<!--连接池中保留的最小连接数。 -->
 		<property name="minPoolSize">
-			<value>2</value>
+			<value>5</value>
 		</property>
 
 		<!--连接池中保留的最大连接数。Default: 15 -->
 		<property name="maxPoolSize">
-			<value>5</value>
+			<value>20</value>
 		</property>
 
 		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->

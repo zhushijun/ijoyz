@@ -1,7 +1,5 @@
 package com.ijoyz.moka.security;
 
-import javax.annotation.Resource;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -13,12 +11,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 
 import com.ijoyz.moka.model.User;
 import com.ijoyz.moka.model.UserRole;
-import com.ijoyz.moka.model.Users;
 
-public class MocaRealm extends AuthorizingRealm {
-	@Resource
-	private Users users;
-	
+public class MocaRealm extends AuthorizingRealm {	
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection collection) {
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();

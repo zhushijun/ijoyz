@@ -10,10 +10,10 @@ import com.ijoyz.moka.model.meta.UserMeta;
 @Service
 public class Users {
 	@Resource
-	UserMapper mapper;
+	UserMapper userMapper;
 	
 	public User getUser(String userName , String pass){
-		UserMeta meta = mapper.getUserMeta(userName , pass);
+		UserMeta meta = userMapper.getUserMeta(userName , pass);
 		return new User(meta , this);
 	}
 }

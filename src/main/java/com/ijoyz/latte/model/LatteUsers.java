@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
  * 
  * @author zhushijun@corp.netease.com
  */
-@Service
-public class Users {
+
+public class LatteUsers {
 	/**
 	 * 获取用户
 	 * 

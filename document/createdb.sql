@@ -21,8 +21,8 @@ create table TB_USER
    GAME_USER_ID         bigint,
    ROLE                 int not null,
    primary key (ID)
-);
-
+)
+engine = InnoDB;
 alter table TB_USER comment '用户表';
 
 /*==============================================================*/
@@ -34,8 +34,8 @@ create table TB_GANG
    GANG_ID              bigint,
    GANG_NAME            varchar(30) not null,
    primary key (ID)
-);
-
+)
+engine = InnoDB;
 alter table TB_GANG comment '����';
 
 /*==============================================================*/
@@ -52,8 +52,8 @@ create table TB_GANG_MEMBER
    POSITION             int,
    IS_LEAVE             int,
    primary key (ID)
-);
-
+)
+engine = InnoDB;
 alter table TB_GANG_MEMBER comment '����Ա��';
 
 /*==============================================================*/
@@ -68,8 +68,8 @@ create table TB_LEAGUE
    RIVAL_GANG_ID        bigint,
    IS_WIN               int not null,
    primary key (ID)
-);
-
+)
+engine = InnoDB;
 alter table TB_LEAGUE comment '�����';
 
 /*==============================================================*/
@@ -98,8 +98,8 @@ create table TB_LEAGUE_DATA
    DRIVE_CHARIOT_COUNT  int,
    CHARIOT_HEADS        int,
    primary key (ID)
-);
-
+)
+engine = InnoDB;
 alter table TB_LEAGUE_DATA comment '�������';
 
 /*==============================================================*/
@@ -107,12 +107,12 @@ alter table TB_LEAGUE_DATA comment '�������';
 /*==============================================================*/
 create table TB_Sequence
 (
-   TableName            varchar(0) not null,
+   TableName            varchar(30) not null,
    CurrentValue         bigint not null,
    Increment            int not null,
    primary key (TableName)
-);
-
+)
+engine = InnoDB;
 
 delimiter //
 
