@@ -11,8 +11,16 @@ import org.apache.shiro.subject.PrincipalCollection;
 
 import com.ijoyz.moka.model.User;
 import com.ijoyz.moka.model.UserRole;
-
-public class MocaRealm extends AuthorizingRealm {	
+/**
+ * 系统的安全框架Realm
+ * @author user
+ *
+ */
+public class MocaRealm extends AuthorizingRealm {
+	public MocaRealm(){
+		setAuthenticationTokenClass(MocaAuthenticationToken.class);
+	}
+	
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection collection) {
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();

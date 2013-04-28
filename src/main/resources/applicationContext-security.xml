@@ -32,7 +32,7 @@
 			<value>
 				/welcome.do* = anon
 				/login.do* = anon
-				/u/** = authc,perms["remote:invoke"]
+				/u/** = authc
 				
 			</value>
 		</property>

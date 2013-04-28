@@ -38,11 +38,11 @@
                 padding: 7px 9px;
             }
         </style>
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     </head>
     <body>
         <div class="container">
-            <form class="form-signin" action="/login.do" method="post">
+            <form class="form-signin" action="/check.do" method="post">
                 <h2 class="form-signin-heading">登 录</h2>
                 <input name="userName" type="text" class="input-block-level" placeholder="用户名"/><input name="pass" type="password" class="input-block-level" placeholder="密码"/>
                 <label class="checkbox">
@@ -55,9 +55,8 @@
             </form>
         </div>
         <!-- /container -->
-        <script src="http://code.jquery.com/jquery.js">
-        </script>
-        <script src="js/bootstrap.min.js">
+        <script src="/js/jquery-1.9.1.min.js"></script>
+        <script src="/js/bootstrap.min.js">
         </script>
     </body>
 </html>
