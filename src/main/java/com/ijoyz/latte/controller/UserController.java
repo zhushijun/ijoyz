@@ -13,7 +13,6 @@ public class UserController {
 	@RequestMapping("/{userName}")
 	public String userMain(){
 		User currentUser = Users.getCurrentUser();
-		System.out.println(currentUser.getUserName());
 		return "user_admin";
 	}
 	
