@@ -8,13 +8,20 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 		<style>
 			.modal{
-				width:640px;
-				margin-left:-320px;             
-			}             
-			.modal-body{
-				overflow: visible;
-            }         
-        </style>
+				width:1024px;
+				margin-left:-512px;             
+			}
+      .modal-body{
+        overflow: auto;
+      }     
+      .table{
+        font-size: 12px;
+        table-layout: fixed;
+      }
+      .table td{
+        overflow: auto;
+      }
+    </style>
 
     </head>
     <body>
@@ -53,7 +60,7 @@
                     <td>2013年5月1日17:57:48</td>
                     <td>开心就好 VS 烟云逍遥轩</td>
                     <td>胜利</td>
-                    <td><a href="#">查看详情</a></td>
+                    <td><a href="data.html" data-toggle="modal" data-target="#modalCreateItem">查看详情</a></td>
                   </tr>
                   <tr>
                     <td>2013年5月1日17:57:48</td>
@@ -66,65 +73,21 @@
                     <td>开心就好 VS 烟云逍遥轩</td>
                     <td>胜利</td>
                     <td><a href="#">查看详情</a></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <table class="table">
-                <thead>
-                  <th>玩家名称</th>
-                  <th>等级</th>
-                  <th>职业</th>
-                  <th>杀敌</th>
-                  <th>助攻</th>
-                  <th>维修</th>
-                  <th>被杀数</th>
-                  <th>爆尸数</th>
-                  <th>复活数</th>
-                  <th>输出量</th>
-                  <th>承受攻击量</th>
-                  <th>治疗量</th>
-                  <th>战车驾驶次数</th>
-                  <th>战车杀人数</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>天神下凡</td>
-                    <td>144</td>
-                    <td>方士</td>
-                    <td>200</td>
-                    <td>201</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>34852358(13.17%)</td>
-                    <td>64555408(7.68%)</td>
-                    <td>15626733(27.40%)</td>
-                    <td>10</td>
-                    <td>10</td>
-                  </tr>
-                  <tr>
-                    <td>天神下凡</td>
-                    <td>144</td>
-                    <td>方士</td>
-                    <td>200</td>
-                    <td>201</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>34852358(13.17%)</td>
-                    <td>64555408(7.68%)</td>
-                    <td>15626733(27.40%)</td>
-                    <td>10</td>
-                    <td>10</td>
                   </tr>
                 </tbody>
               </table>
 
         		</div>
         	</div>
+        </div>
+
+        <div id="modalCreateItem" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">详细信息</h3>
+          </div>
+          <div class="modal-body">
+          </div>
         </div>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
