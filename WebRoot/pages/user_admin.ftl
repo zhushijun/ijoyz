@@ -5,7 +5,7 @@
         <title>LatteSystem-admin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 		<style>
 			.modal{
 				width:1024px;
@@ -29,7 +29,7 @@
             <div class="navbar-inner">
                 <ul class="nav pull-right">
                     <li>
-                        <a>朱石君</a>
+                        <a>${user.userName}</a>
                     </li>
                     <li>
                         <a href="#">退出</a>
@@ -41,42 +41,31 @@
         <div class="container">
         	<div class="row">
         		<div class="span2">
-        			<ul class="nav nav-list affix">
-                <li class="active"><a href="#league">联赛成绩</a></li>
-                <li class=""><a href="#member">帮会人员</a></li>
-                <li class=""><a href="#other">其他</a></li>
-              </ul>
+	       			<ul class="nav nav-list affix">
+			            <li class="active"><a href="#league">联赛成绩</a></li>
+			            <li class=""><a href="#member">帮会人员</a></li>
+			            <li class=""><a href="#other">其他</a></li>
+	                </ul>
         		</div>
         		<div class="span10">
-              <table class="table">
-                <thead>
-                  <th>时间</th>
-                  <th>对阵双方</th>
-                  <th>结果</th>
-                  <th>操作</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2013年5月1日17:57:48</td>
-                    <td>开心就好 VS 烟云逍遥轩</td>
-                    <td>胜利</td>
-                    <td><a href="data.html" data-toggle="modal" data-target="#modalCreateItem">查看详情</a></td>
-                  </tr>
-                  <tr>
-                    <td>2013年5月1日17:57:48</td>
-                    <td>开心就好 VS 烟云逍遥轩</td>
-                    <td>胜利</td>
-                    <td><a href="#">查看详情</a></td>
-                  </tr>
-                  <tr>
-                    <td>2013年5月1日17:57:48</td>
-                    <td>开心就好 VS 烟云逍遥轩</td>
-                    <td>胜利</td>
-                    <td><a href="#">查看详情</a></td>
-                  </tr>
-                </tbody>
-              </table>
-
+	              <table class="table">
+	                <thead>
+	                  <th>时间</th>
+	                  <th>对阵双方</th>
+	                  <th>结果</th>
+	                  <th>操作</th>
+	                </thead>
+	                <tbody>
+	                  <#list leagues as item>
+	                  <tr>
+	                    <td>${item.date?date}</td>
+	                    <td>${item.gang.name} VS ${item.rival}</td>
+	                    <td><#if item.win>胜利<#else>失败</#if></td>
+	                    <td><a href="/u/${user.userName}/detail.do?id=${item.id}" data-toggle="modal" data-target="#modalCreateItem">详情</a></td>
+	                  </tr>
+	                  </#list>
+	                </tbody>
+	              </table>
         		</div>
         	</div>
         </div>
@@ -89,13 +78,10 @@
           <div class="modal-body">
           </div>
         </div>
-        <script src="js/jquery-1.9.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="/js/jquery-1.9.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
         <script type="text/javascript">
         	$(document).ready(function(){
-
-
-
         		/*选择支出;收入;转账函数*/
 				$("[href='#changetype#']").click(function(){
 				  $("#typebtn").text($(this).text());

@@ -10,6 +10,7 @@ drop table if exists TB_Sequence;
 
 drop table if exists TB_USER;
 
+drop table if exists TB_USER_GANG;
 /*==============================================================*/
 /* Table: TB_USER                                               */
 /*==============================================================*/
@@ -37,6 +38,16 @@ create table TB_GANG
 )
 engine = InnoDB;
 alter table TB_GANG comment '����';
+
+/*==============================================================*/
+/* Table: TB_USER_GANG                                          */
+/*==============================================================*/
+create table TB_USER_GANG
+(
+   USER_ID              bigint not null,
+   GANG_ID              bigint not null,
+   primary key (USER_ID, GANG_ID)
+);
 
 /*==============================================================*/
 /* Table: TB_GANG_MEMBER                                        */

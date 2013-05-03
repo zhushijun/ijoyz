@@ -12,6 +12,36 @@ public class LeagueData {
 
 	private final GangMember member;
 
+	private int level;//TODO
+	
+	private String name;//TODO
+	
+	private String prof;//TODO
+	
+	public String getProf() {
+		return prof;
+	}
+
+	public void setProf(String prof) {
+		this.prof = prof;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
 	// 人头数
 	private int heads;
 
@@ -58,8 +88,6 @@ public class LeagueData {
 		this.gang = gang;
 		this.league = league;
 		this.member = member;
-		league.dataMap.put(member, this);
-		member.dataMap.put(league, this);
 	}
 
 	public League getLeague() {

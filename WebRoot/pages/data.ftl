@@ -14,33 +14,21 @@
                 <th>其他</th>
               </thead>
               <tbody>
+              	<#list datas as it>
                 <tr>
-                  <td>天神下凡</td>
-                  <td>144</td>
-                  <td>方士</td>
-                  <td>200</td>
-                  <td>201</td>
-                  <td>0</td>
-                  <td>8</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>10</td>
-                  <td>10</td>
+                  <td>${it.name}</td>
+                  <td>${it.level}</td>
+                  <td>${it.prof}</td>
+                  <td>${it.heads}</td>
+                  <td>${it.assist}</td>
+                  <td>${it.repair}</td>
+                  <td>${it.dieCount}</td>
+                  <td>${it.corpse}</td>
+                  <td>${it.revive}</td>
+                  <td>${it.driveChariotCount}</td>
+                  <td>${it.chariotHeads}</td>
                   <td><a href="#">其他操作</a></td>
                 </tr>
-                <tr>
-                  <td>天神下凡</td>
-                  <td>144</td>
-                  <td>方士</td>
-                  <td>200</td>
-                  <td>201</td>
-                  <td>0</td>
-                  <td>8</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>10</td>
-                  <td>10</td>
-                  <td><a href="#">其他操作</a></td>
-                </tr>
+                </#list>
               </tbody>
             </table>

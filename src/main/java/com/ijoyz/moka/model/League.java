@@ -1,6 +1,6 @@
 package com.ijoyz.moka.model;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,6 +23,10 @@ public class League extends GangActivity {
 
 	// 是否胜利
 	private final boolean win;
+	
+	public long getId(){
+		return 1213;
+	}
 
 	final Map<GangMember, LeagueData> dataMap = new LinkedHashMap<GangMember, LeagueData>();
 
@@ -34,7 +38,7 @@ public class League extends GangActivity {
 		gang.leagues.add(this);
 	}
 
-
+	//TODO
 	public LeagueData loadLeagueData(GangMember member) {
 		LeagueData data = dataMap.get(member);
 		if (data == null) {
@@ -42,9 +46,22 @@ public class League extends GangActivity {
 		}
 		return data;
 	}
-
+	//TODO
 	public List<LeagueData> getLeagueData() {
-		return new ArrayList<LeagueData>(dataMap.values());
+		LeagueData leagueData = new LeagueData(null, null, null);
+		leagueData.setAssist(10);
+		leagueData.setChariotHeads(100);
+		leagueData.setCorpse(5);
+		leagueData.setCure(100000);
+		leagueData.setDieCount(5);
+		leagueData.setDriveChariotCount(10);
+		leagueData.setHeads(102);
+		leagueData.setLevel(144);
+		leagueData.setRepair(6);
+		leagueData.setRevive(17);
+		leagueData.setName("天神下凡");
+		leagueData.setProf("方士");
+		return Arrays.asList(leagueData);
 	}
 
 	public Gang getGang() {
