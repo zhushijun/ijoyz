@@ -17,7 +17,7 @@ import com.ijoyz.moka.model.Users;
 @RequestMapping("/u")
 public class UserController {
 
-	@RequestMapping("/{userName}")
+	@RequestMapping("/")
 	public String userMain(ModelMap modelMap) {
 		User currentUser = Users.getCurrentUser();
 		modelMap.put("user", currentUser);
@@ -26,7 +26,7 @@ public class UserController {
 		return "user_admin";
 	}
 
-	@RequestMapping("/{userName}/detail")
+	@RequestMapping("/detail")
 	public String leagueDetail(@RequestParam("id") long leagueId,
 			ModelMap modelMap) {
 		User currentUser = Users.getCurrentUser();
@@ -37,7 +37,6 @@ public class UserController {
 		}
 		modelMap.put("datas", datas);
 		return "data";
-
 	}
 
 }

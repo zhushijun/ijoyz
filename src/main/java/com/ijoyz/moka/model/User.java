@@ -1,7 +1,6 @@
 package com.ijoyz.moka.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.ijoyz.moka.mapper.GangMapper;
@@ -45,10 +44,13 @@ public class User {
 		}
 	}
 
-	// TODO
 	public League getLeague(long leagueId) {
-		Gang gang = new Gang(12345, "开心就好");
-		League league = new League("敌人帮会0", new Date(), true, gang);
-		return league;
+		List<League> leagues = getLeagues();
+		for (League league : leagues) {
+			if (league.getId() == leagueId) {
+				return league;
+			}
+		}
+		return null;
 	}
 }
